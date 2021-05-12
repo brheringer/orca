@@ -4,6 +4,6 @@ module Types
     field :structure, String, null: false
     field :name, String, null: false
     field :username, String, null: false
-    field :kind, AccountKind, null: false
+    field :kind, Int, null: false
   end
 end

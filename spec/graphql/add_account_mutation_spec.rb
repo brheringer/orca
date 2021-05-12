@@ -5,7 +5,7 @@ RSpec.describe Types::MutationType do
   describe "add account" do
 
     let(:query) do
-      %(mutation AddAccountMutation($structure: String!, $name: String!, $kind: AccountKind!) {
+      %(mutation AddAccountMutation($structure: String!, $name: String!, $kind: Int!) {
         addAccount(structure: $structure, name: $name, kind: $kind) {
           account {
             id
@@ -19,7 +19,7 @@ RSpec.describe Types::MutationType do
 
     subject(:result) do #significa: o subject (objeto do teste) vai ser o resultado da query (json); sem isso, seria QueryType.new
         OrcaSchema.execute(query, 
-          variables: {structure:'1.1', name:'account name', kind: 'CREDIT'},
+          variables: {structure:'1.1', name:'account name', kind: 0},
           context: {current_user:'admin'})
           .as_json
     end

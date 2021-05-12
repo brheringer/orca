@@ -2,7 +2,7 @@ module Mutations
     class AddAccountMutation < Mutations::BaseMutation
       argument :structure, String, required: true
       argument :name, String, required: true
-      argument :kind, Types::AccountKind, required: true
+      argument :kind, Int, required: true
   
       field :account, Types::AccountType, null: true
       field :errors, [String], null: false
