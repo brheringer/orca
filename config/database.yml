@@ -1,0 +1,20 @@
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: orca_on_rails_development.sqlite3
+
+test:
+  <<: *default
+  database: orca_on_rails_test.sqlite3
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: orca_on_rails_production
+  username: orca_on_rails
+  password: <%= ENV['WORLD_CUP_ON_RAILS_DATABASE_PASSWORD'] %>
