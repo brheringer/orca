@@ -24,9 +24,6 @@ gem 'graphql', '~> 1.9.12'
 gem 'rack-cors'
 gem 'jwt'
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
-
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'

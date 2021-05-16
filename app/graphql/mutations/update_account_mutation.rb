@@ -31,7 +31,8 @@ module Mutations
         account = Account.new(
             structure: structure,
             name: name,
-            kind: kind
+            kind: kind,
+            username: context[:current_user] #TODO DRY
         )
   
         if account.save
